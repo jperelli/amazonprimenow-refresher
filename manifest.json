@@ -1,0 +1,30 @@
+{
+    "name": "Amazon Prime Now Refresher",
+    "version": "1.0",
+    "description": "Let's you refresh the cart in amazon prime now spain and throws a notification when the cart is available",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "My custom google Extension"
+    },
+    "permissions": [
+        "activeTab",
+        "notifications"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://primenow.amazon.es/*"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    }
+}
